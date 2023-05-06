@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Source+Sans+Pro&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: #16213E;
+}
+
+.header h1{
+    font-family: poppins;
+    margin-top: 50px;
+    color: white;
+    font-size: 50px;
+}
+
+.header {
+    margin-left: 50px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.button1,
+.button2 {
+    font-family: poppins;
+    padding: 10px;
+    margin: 10px;
+    background-color: #20c997;
+    color: white;
+    border-color:white ;
+}
+
+
+header {
+    height: 8%;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: poppins;
+    font-size: 120%;
+    color: white;
+    font-weight: bolder;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* background-color: rgba(22, 33, 62, 0.9); */
+    background-color: #20c997;
+}
+
+/* 6a2aa3*/
+.links {
+    font-family: poppins;
+    font-weight: lighter;
+    font-size: 90%;
+    margin-left: auto;
+    width: 50%;
+    padding-right: 0;
+    order: 2;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.links span {
+    margin: 5%;
+    margin-right: 0;
+    float: right;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.links span a {
+    transition: 0.1s;
+}
+
+.links span:hover a {
+    color: #20c997;
+}
+
+.boxes-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.box {
+    font-family: poppins;
+    flex: 1;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 10px; /* Change margin to 0 10px */
+}
+
+.box h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.box p {
+    margin-top: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+
+  
+  footer{
+    background-color: #16213E;
+    color:white;
+    text-align:center;
+    margin-top:2%;
+    width:100%;
+    font-family: poppins;
+    padding:10px;
+    font-size:75%;
+    position: absolute;
+    bottom: 0%;
+}
+footer a{
+    color:#20c997;
+    text-decoration: underline;
+}
+  
+  
+  
