@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <p class="logo">SPLITWISE...</p>
+        <div class="links">
+            <span><a href='../../activity.html'>Activity</a></span>
+            <span><a href="{{ url_for('Freinds')}}">Friends</a></span>
+            <span><a href='../../groups.html'>Groups</a></span>
+            <span><a href="{{url_for('Profile')}}"><img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile"></a></span>
+        </div>
+    </header> 
+    <div class="frnds">
+        
+        <div class="friend-det">
+            <img src="https://i.ibb.co/HqRCNz1/profile.png">
+            <span class="name">friendname</span>
+            <span class="money1">what we owe</span>
+            <span class="money2">what they owe</span>
+        </div>
+    
+        <div class="friend-det">
+            <img src="https://i.ibb.co/HqRCNz1/profile.png">
+            <span class="name">friendname</span>
+            <span class="money1">what we owe</span>
+            <span class="money2">what they owe</span>
+        </div>
+        <div class="friend-det">
+            <img src="https://i.ibb.co/HqRCNz1/profile.png">
+            <span class="name">friendname</span>
+            <span class="money1">what we owe</span>
+            <span class="money2">what they owe</span>
+        </div>
+    </div>
+    <!-- <div>
+    <span><button type="button"class="add">Add a friend</button></span>
+    </div> -->
+    <p class="total">Total Friends : </p>
+    <form>
+		<h2 style="color:#16213E;">Add a Friend</h2>
+		<input type="text" id="friend-name" name="friend-name" placeholder="Enter user name" required>
+        <br>
+		<button type="submit">Add</button>
+	</form>
+</body>
+</html>

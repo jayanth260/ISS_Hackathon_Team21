@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <p class="logo">SPLITWISE...</p>
+        <div class="links">
+            <span><a href='/activity.html'>Activity</a></span>
+            <span><a href='/friends.html'>Friends</a></span>
+            <!-- <span><a href='/groups.html'>Groups</a></span> -->
+            <span><img src="https://i.ibb.co/HqRCNz1/profile.png" styl alt="profile"> <a href="{{url_for('Profile')}}">profile</a></span>
+        </div>
+    </header>
+    <div class="header">
+        <h1>DASHBOARD</h1>
+    </div>
+   
+    <div class="boxes-wrapper">
+        <div class="box1">
+            <h2>You Owe</h2>
+            <p>{{Owes}}</p>
+        </div>
+        <div class="box2">
+            <h2>You Are Owed</h2>
+            <p>{{Owed}}</p>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="button-wrapper">
+        <button class="button1" id="expense"><a href="expense.html">Add an expense</a></button>
+        <button class="button2" id="owe"><a href="settle.html">Settle an expense</a></button>
+
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flash" style="position: absolute;bottom: 0;" >
+      
+        <li>{{ messages[-1][1] }}</li>
+         </ul>
+    <!-- <button id="dismiss">Dismiss</button>
+    <script>
+      document.getElementById('dismiss').addEventListener('click', function() {
+        fetch('/clear-messages?category={{ category }}')
+          .then(() => location.reload());
+      });
+    </script> -->
+  {% endif %}
+{% endwith %}
+    <script src="dashboard.js"></script>
+    <footer>
+        <div class="footer-copy">&#169; Copyrights 2023 || Splitwise</div>
+        <div class="footer-about">Learn more about Splitwise<a href='./home.html'> here.</a></div>
+     </footer>
+</body>
+</html>
