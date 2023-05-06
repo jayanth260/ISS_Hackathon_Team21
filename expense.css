@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Source+Sans+Pro&display=swap');
+
+@font-face {
+    font-family: "Righteous";
+    src: url("./Righteous-Regular.ttf");
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.logo
+{
+    font-size: 150%;
+    font-family:Righteous;
+    color:#16213E;
+    opacity: 0.8;
+
+}
+
+.header {
+    font-family: poppins;
+    margin-left: 50px;
+}
+
+.header h1 {
+    font-size: 50px;
+    color: white;
+    margin-top: 50px;
+
+}
+
+.info form {
+    color: white;
+    margin-left: 650px;
+}
+
+.info form h2, .info2 form h2{
+    color: black;
+    text-align: center;
+}
+
+
+
+body {
+    font-family: poppins;
+    background-color: #16213E;
+    align-self: center;
+}
+
+header {
+    height: 8%;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: poppins;
+    font-size: 120%;
+    color: white;
+    font-weight: bolder;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* background-color: rgba(22, 33, 62, 0.9); */
+    background-color: #20c997;
+}
+
+/* 6a2aa3*/
+.links {
+    font-family: poppins;
+    font-weight: lighter;
+    font-size: 90%;
+    margin-left: auto;
+    width: 50%;
+    padding-right: 0;
+    order: 2;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.links span {
+    margin: 5%;
+    margin-right: 0;
+    float: right;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.links span a {
+    transition: 0.1s;
+}
+
+.links span:hover a {
+    color: #20c997;
+}
+
+footer {
+    background-color: #16213E;
+    color: white;
+    text-align: center;
+    margin-top: 2%;
+    width: 100%;
+    font-family: poppins;
+    padding: 10px;
+    font-size: 75%;
+    position: absolute;
+    bottom: 0%;
+}
+
+footer a {
+    color: #20c997;
+    text-decoration: underline;
+}
+
+form {
+	max-width: 500px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	color: #333;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+button[type="submit"] {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: #20c997;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+	background-color: #17a87c;
+}
+
+.info2 .form-group label {
+    display: inline-block;
+    width: 150px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 1px;
+}
+
+.calculate-btn,
+.save-btn {
+    display: inline-block;
+    width: 45%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #20c997;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calculate-btn:hover,
+.save-btn:hover {
+    background-color:  #17a87c;;
+}
+
+#friend-cost-per-person, #group-cost-per-person {
+    color: black;
+}

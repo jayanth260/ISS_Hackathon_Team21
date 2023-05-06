@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Expense</title>
+    <link rel="stylesheet" href="expense.css">
+</head>
+
+<body>
+    <header>
+        <p class="logo">SPLITWISE...</p>
+        <div class="links">
+            <span><a href='../../activity.html'>Activity</a></span>
+            <span><a href='../../friends.html'>Friends</a></span>
+            <span><a href='../../groups.html'>Groups</a></span>
+        </div>
+    </header>
+    <div class="header">
+        <h1>ADD AN EXPENSE</h1>
+    </div>
+
+    <div class="info">
+        <form>
+            <div class="form-group">
+                <label for="split-type">Split With</label>
+                <select id="split-type" name="split-type" required>
+                    <option value="">Select an option</option>
+                    <option value="friend">Friend</option>
+                    <option value="group">Group</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to be Paid</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="amount_u">Amount You Paid</label>
+                <input type="number" id="amount_u" name="amount_u">
+            </div>
+            <div id="friend-name" class="form-group-split-fields split-friend">
+                <label for="friend-name">Username</label>
+                <input type="text" id="friend_name" name="friend_name">
+            </div>
+
+            <div id="friend-owes" class="form-group-split-fields split-friend">
+                <label>Amount You Are Owed</label>
+                <p><span id="friend-cost-per-person"></span></p>
+            </div>
+            <div id="group-name" class="form-group-split-fields split-group">
+                <label for="group-name">Group Name</label>
+                <input type="text" id="group_name" name="group_name">
+            </div>
+            <div id="group-fields" class="form-group-split-fields split-group">
+                <label for="group-size">Number of members</label>
+                <input type="number" id="group-size" name="group-size" min="1">
+            </div>
+            <div id="group-cost" class="form-group-split-fields split-group">
+                <label>Amount Owed By Group Per Person</label>
+                <p><span id="group-cost-per-person"></span></p>
+            </div>
+
+            <div class="button-group">
+                <button onclick="Calculateamount()" type="submit" class="calculate-btn">Calculate</button>
+                <button onclick="CalculateGroupAmount()" type="button" class="save-btn">Save</button>
+            </div>
+
+        </form>
+
+    </div>
+    <br><br>
+
+    <footer>
+        <div class="footer-copy">&#169; Copyrights 2023 || Splitwise</div>
+        <div class="footer-about">Learn more about Splitwise<a href='./home.html'> here.</a></div>
+    </footer>
+
+    <script src="expense.js"></script>
+</body>
+
+</html>
