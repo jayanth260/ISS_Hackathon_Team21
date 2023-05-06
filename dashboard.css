@@ -1,13 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Source+Sans+Pro&display=swap');
+@font-face {
+    font-family: "Righteous";
+    src: url("./Righteous-Regular.ttf");
+  }
 *{
     box-sizing: border-box;
     margin: 0;
 }
-
 body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
     background-color: #16213E;
 }
+header{
+    height: 8%;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: poppins;
+    font-size:120%;
+    color:white;
+    font-weight: bolder;
+    position: sticky;
+    top:0;
+    z-index: 2;
+    /* background-color: rgba(22, 33, 62, 0.9); */
+    background-color:#20c997;
+}
+.links span img
+{
+    width:40px;
+    height:40px;
+    position: relative;
+    left:530px;
+}
+.logo
+{
+    font-size: 150%;
+    font-family:Righteous;
+    color:#16213E;
+    opacity: 0.8;
 
+}
+.links{
+    font-weight: lighter;
+    font-size: 90%;
+    margin-left: auto;
+    width:50%;
+    padding-right:5%;
+    order:2;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.links span{
+    margin:5%;
+    margin-right: 0;
+    float:right;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+    
+}
+
+.links span a{
+    transition: 0.1s;
+}
+.links span:hover a{
+    color:#16213E;
+}
 .header h1{
     font-family: poppins;
     margin-top: 50px;
@@ -16,7 +83,7 @@ body{
 }
 
 .header {
-    margin-left: 50px;
+    margin-left:10%;
 }
 
 .button-wrapper {
@@ -35,59 +102,6 @@ body{
 }
 
 
-header {
-    height: 8%;
-    width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    font-family: poppins;
-    font-size: 120%;
-    color: white;
-    font-weight: bolder;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    /* background-color: rgba(22, 33, 62, 0.9); */
-    background-color: #20c997;
-}
-
-/* 6a2aa3*/
-.links {
-    font-family: poppins;
-    font-weight: lighter;
-    font-size: 90%;
-    margin-left: auto;
-    width: 50%;
-    padding-right: 0;
-    order: 2;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-.links span {
-    margin: 5%;
-    margin-right: 0;
-    float: right;
-    cursor: pointer;
-    padding: 5px 20px;
-    transition: 0.3s;
-    border-radius: 10px;
-}
-
-.links span a {
-    transition: 0.1s;
-}
-
-.links span:hover a {
-    color: #20c997;
-}
-
 .boxes-wrapper {
     display: flex;
     justify-content: center;
@@ -95,22 +109,30 @@ a {
     margin-top: 40px;
 }
 
-.box {
+.box1 {
     font-family: poppins;
     flex: 1;
     padding: 15px;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     text-align: center;
-    margin: 0 10px; /* Change margin to 0 10px */
+    /* margin: 0 10px; Change margin to 0 10px */
+    margin-left:15%;
 }
-
-.box h2 {
+.box2
+{
+    font-family: poppins;
+    flex: 1;
+    padding: 15px;
+    /* border-radius: 4px; */
+    /* margin: 0 10px; Change margin to 0 10px */
+}
+.box1 h2,.box2 h2 {
     margin-top: 0;
     font-size: 24px;
     color: white;
 }
 
-.box p {
+.box1 p,.box2 p {
     margin-top: 10px;
     font-size: 36px;
     font-weight: bold;

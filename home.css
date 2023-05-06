@@ -60,6 +60,7 @@ a{
     transition: 0.3s;
     border-radius: 10px;
 }
+
 .links span a{
     transition: 0.1s;
 }
@@ -99,7 +100,7 @@ footer a{
     color:#20c997;
     text-decoration: underline;
 }
-.signup
+.signup,.login
 {
     color:#bbb;
     /* background-color:rgba(255,255,255,0.1); */
@@ -114,7 +115,7 @@ footer a{
     padding: 1%;
     border-radius: 10px;
 }
-.signup:hover
+.signup:hover,.login:hover
 {
     box-shadow: 0 0 75px 5px #20c997;
 }
@@ -123,3 +124,7 @@ footer a{
     margin-left: 32%;
     margin-top: 2%;
 }
+
+
+
+
