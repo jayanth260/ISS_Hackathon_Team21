@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Source+Sans+Pro&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #16213E;
+}
+header{
+    height: 8%;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: poppins;
+    font-size:120%;
+    color:white;
+    font-weight: bolder;
+    position: sticky;
+    top:0;
+    z-index: 2;
+    /* background-color: rgba(22, 33, 62, 0.9); */
+    background-color:#20c997;
+}
+/* 6a2aa3*/
+.links{
+    font-weight: lighter;
+    font-size: 90%;
+    margin-left: auto;
+    width:50%;
+    padding-right: 0;
+    order:2;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.links span{
+    margin:5%;
+    margin-right: 0;
+    float:right;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.links span a{
+    transition: 0.1s;
+}
+.links span:hover a{
+    color:#20c997;
+}
+.welcome
+{
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-family: poppins;
+    font-size:300% ;
+    text-align: center;
+    color: antiquewhite;
+}
+.intro
+{
+    font-family: poppins;
+    font-size: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: antiquewhite;
+}
