@@ -1,0 +1,137 @@
+.friend-det
+{
+    display: block;
+    height: 60px;
+    /* background-image: linear-gradient(to right,#16213E,#20c997); */
+    /* border-color: aquamarine; */
+    margin-left:10%;
+    border-radius:10px;
+    position: relative;
+    transition: 0.3s;
+    filter: grayscale(70%);
+    transition: 0.3s;
+    margin-bottom: 0.5%;
+    margin-right: 10%;
+    /* background: #16213E; */
+}
+
+.friend-det:hover  img{
+    height: 45px;
+    width: 45px;
+}
+.friend-det:hover p{
+    font-size: 220%;
+}
+.friend-det img{
+    /* padding-top: 1%; */
+    /* padding-left: 1%; */
+    display:inline;
+    border-radius: 20px 0 0 20px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    transition: 0.3s;
+    object-fit: cover;
+}
+/* .friend-det span
+{
+    color:antiquewhite;
+    font-size:20px;
+    margin-left: 5%;
+    font-family: poppins;
+    /* text-align: center; */
+    /* margin-top: 2%; 
+    padding-top: 5%;
+} */
+.name
+{
+    color:antiquewhite;
+    font-size:20px;
+    margin-left: 5%;
+    font-family: poppins;
+}
+.money1
+{
+    font-size: 20px;
+    font-family: poppins;
+    position: relative;
+    left:400px;
+    color:#20c997;
+}
+.money2
+{
+    font-size: 20px;
+    font-family: poppins;
+    position: relative;
+    left:800px;
+    color:#20c997;
+}
+.frnds
+{
+    padding-top:2%;
+    /* margin-top:5%; */
+    padding-bottom: 1%;
+    z-index: 2;
+}
+.add
+{
+    
+    background-color:#20c997;
+    margin-right:400px;
+    font-size: 18px;
+    border:none;
+    color: #16213E;
+    cursor: pointer;
+    border-color: #20c997;
+    font-family: "poppins";
+    padding: 1%;
+    border-radius: 10px;
+    position: relative;
+    left: 47%;
+}
+.add:hover
+{
+    box-shadow: 0 0 1px 1px #20c997;
+}
+button[type=submit] {
+    background-color:#20c997;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+button[type=submit]:hover {
+    background-color:#20c997;
+    font-family: poppins;
+}
+form {
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    font-family: poppins;
+}
+
+label {
+    /* display: block; */
+    margin-bottom: 10px;
+    font-family: poppins;
+
+}
+#friend-name
+{
+    padding: 2%;
+    font-size: 18px;
+}
+.total
+{
+    font-size: 24px;
+    color: antiquewhite;
+    margin-left: 10%;
+    font-family: poppins;
+}
