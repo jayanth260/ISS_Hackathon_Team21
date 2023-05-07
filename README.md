@@ -20,4 +20,4 @@ All the files connected to the web application have to be placed in a single fol
 1. Jayanth - profile.html, app.py, database.db, script.js, style.css, Login.html, Signup.html 
 2. Deekshitha - home.html, friends.html, Groups.html, groups.js 
 3. Gadha - dashboard.html, expense.html, expense.css, expense.js, expense.py, settle.html, settle.py
-4. CSS files for dashboard, friends, groups, home, profile were combined into one file - dashboard.css
+4. CSS files for the dashboard, friends, groups, home, profile were combined into one file - dashboard.css
