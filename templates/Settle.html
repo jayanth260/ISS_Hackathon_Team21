@@ -2,14 +2,14 @@
 
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/static/expense.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
     <header>
         <p class="logo">SPLITWISE...</p>
         <div class="links">
-            <!-- <span><a href='../../activity.html'>Activity</a></span> -->
+            <span><a href="{{url_for('Profile')}}" >Profile</a></span>
             <span><a href="{{url_for('Friends')}}">Friends</a></span>
             <span><a href="{{url_for('Groups')}}">Groups</a></span>
         </div>
@@ -46,6 +46,6 @@
 
     <footer>
         <div class="footer-copy">&#169; Copyrights 2023 || Splitwise</div>
-        <div class="footer-about">Learn more about Splitwise<a href='./home.html'> here.</a></div>
+        <div class="footer-about">Learn more about Splitwise<a href="{{url_for('Home')}}"> here.</a></div>
     </footer>
 </body>
