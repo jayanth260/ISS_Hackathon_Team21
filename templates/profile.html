@@ -15,11 +15,12 @@
         </div>
     </header>
     <div class="profile" style="color: antiquewhite;">
+        <div class="profile-box">
         <span class="profiletext">Profile<span class="dot">.</span></span>
-        <a href="{{url_for('Home')}}"style="text-decoration-line: underline;">Log Out</a>
+        <a href="{{url_for('Home')}}" style="text-decoration-line: underline;">Log Out</a>
         <div >
-            <h2 style="font-size: 17px; position:relative;top:120px;left:250px;font-family: poppins;">Email : {{prof[1]}}</h2>
-            <h2 style="font-size: 17px;position: relative;top:140px;left:250px;font-family: poppins;">mobile : {{prof[2]}}</h2>
+            <h2 style="font-size: 17px; position:relative;top:120px;left:250px;font-family: poppins;margin-right: 6%;">Email : {{prof[1]}}</h2>
+            <h2 style="font-size: 17px;position: relative;top:140px;left:250px;font-family: poppins;margin-right: 6%;">mobile : {{prof[2]}}</h2>
         </div>
         <!-- <a href="https://imgbb.com/"><img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile" border="0"></a> -->
         <img src="https://i.ibb.co/hFRg885/IMG-20230507-WA0008.jpg" alt="profile">
@@ -35,9 +36,12 @@
                 <p>{{prof[5]}}</p>
             </div>
         </div>
+    </div>
         <div class="friends">
             <h3>Friends</h3>
+            <br><br>
             {% for i in dic1%}
+            <span><img src="https://i.ibb.co/mzxCVnJ/IMG-20230507-WA0010.jpg"></span>
             <p>{{i}}</p>
             {% endfor %}
         </div>
