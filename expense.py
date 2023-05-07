@@ -37,6 +37,8 @@ def calculate_expense():
             c.execute("UPDATE Info SET owebyfr = ? WHERE username=? AND frname = ?", (amount_you_are_owed, user_name, friend_name))
             c.execute("UPDATE Info SET owebyU = ? WHERE username=? AND frname = ?", (amount_you_are_owed, friend_name, user_name))
 
+        conn.commit()
+        conn.close()
 
 if __name__ == '__main__':
     app.run(debug=True)

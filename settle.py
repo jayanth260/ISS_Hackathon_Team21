@@ -30,7 +30,10 @@ def settle_expense():
     amount_fr_is_owed = amount_fr_is_owed - amount_to_be_paid
 
     c.execute("UPDATE Info SET owebyU = ? WHERE username=? AND frname= ?",(amount_you_owe, user_name,friend_name))
-    c.execute("UPDATE Info SET owebyfr = ? WHERE username=? AND frname= ?",(amount_fr_is_owed, friend_name, user_name))    
+    c.execute("UPDATE Info SET owebyfr = ? WHERE username=? AND frname= ?",(amount_fr_is_owed, friend_name, user_name))   
+
+    conn.commit()
+    conn.close() 
 
 if __name__ == '__main__':
     app.run(debug=True)
