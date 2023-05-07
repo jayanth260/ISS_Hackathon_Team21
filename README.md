@@ -6,7 +6,7 @@ The website created is a web-based clone of the application **Splitwise**.
 2. The **Dashboard** features two options : **Add an Expense** and **Settle an Expense** which like their namesake are for adding a new expense and settling an old expense with friends respectively.
 3. The **Friends** page lists all the friends the user has transactions along with a feature to add more friends and remove existing friends.
 4. The **Groups** page lists all the groups the user is a part of - formed from the user's friend list. 
-5. The **Profile** page 
+5. The **Profile** page contains the username, user's email address, user's phone number, a list of the user's friends, the total amount that the user owes and the total amount owed to the user by their friends. There is also a **Logout** option for the user to logout of their account.
 
 ### Frameworks and Packages
 1. Flask
