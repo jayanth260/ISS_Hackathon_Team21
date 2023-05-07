@@ -12,6 +12,7 @@ The website created is a web-based clone of the application **Splitwise**.
 2. SQLite3
 
 ### Instructions To Run The Application
+All the files connected to the web application have to be placed in a single folder. The Login/Sign-Up page should be opened in the browser first - other pages are navigated to after logging in/signing up. The python files (with extension .py) have to be run on a suitable platform (a text editor like VSCode) before viewing the webpages on the browser. (It is to be noted that the image files used have to be present in the folder)
 
 ### Contribution
 1. Jayanth - profile.html, app.py, database.db, script.js, style.css, Login.html, Signup.html 
