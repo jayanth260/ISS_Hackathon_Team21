@@ -19,12 +19,13 @@
         </div>
     </header> 
     <div class="frnds">
+            <div><a style="position: relative;left:700px">Owes</a><a style="position: relative;left:1000px">Owed</a></div>
         {% for i in dic1%}
         <div class="friend-det">
             <img src="https://i.ibb.co/HqRCNz1/profile.png">
-            <span class="name">{{i}}</span>
-            <span class="money1">what we owe-{{dic1[i][0]}}</span>
-            <span class="money2">what they owei-{{dic1[i][1]}}</span>
+            <span class="name" style="position: relative;top:10px;">{{i}} <a style="position: absolute;left:470px;">{{dic1[i][0]}}</a><a style="position: absolute;left:800px">{{dic1[i][1]}}</a></span>
+            
+            <span class="money2"></span>
         </div>
         {% endfor %}
     

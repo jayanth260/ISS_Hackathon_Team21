@@ -78,10 +78,11 @@
 
 
     <div class="friend" style="color: aliceblue;">
-        <h2 style="position: relative;left:100px;"> With a Friend</h2>
+        <!-- <h2 style="position: relative;left:100px;"> With a Friend</h2> -->
 
-        <form method="POST" action="{{ url_for('addexfr') }}">
-            <label>Username</label><br>
+         <form method="POST" action="{{ url_for('addexfr') }}">
+            <h2 style="color: black; font-size: 20px;">With a Group</h2>
+            <!-- <label>Username</label><br>
             <input type="text" name="name"><br>
             <label>total amount:</label><br>
             <input type="integer" name="amttol"><br>
@@ -89,12 +90,12 @@
             <input type="integer" name="amtU"><br>
 
             <input type="hidden" name="id" value="1">
-            <button type="submit" style="position: relative;top:10px;">ADD</button>
+            <button type="submit" style="position: relative;top:10px;">ADD</button> -->
 
-        </form></div>
-
+        </form>
+    </div>
         <div class="friend" style="color: aliceblue;">
-            <h2>With a Group</h2>
+            <!-- <h2 style="position:;left: 200px;">With a Group</h2> -->
 
             <form method="POST" action="{{ url_for('addexgr') }}">
 
@@ -104,7 +105,9 @@
                 <input type="integer" name="amtU"><br>
 
                 <form method="POST" action="{{ url_for('addexgr') }}">
-                <h2 style="color:#16213E;">Group:</h2>
+                <h2 style="color:#16213E;">Group:
+                    <p style="font-size: 10px;">(if not a group, use group name as NULL and no.of people 2)</p>
+                </h2>
                 <input type="text" id="num-people1" name="num-people1" placeholder="Enter group name" required>
                 <div><input type="number" id="num-people" name="num-people" placeholder="Enter no of people" required>
                 </div>

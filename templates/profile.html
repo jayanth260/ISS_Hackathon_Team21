@@ -15,21 +15,26 @@
             <span><a href='./profile.html'><img src="profile.png" alt="profile"></a></span>
         </div>
     </header>
-    <div class="profile">
+    <div class="profile" style="color:antiquewhite;">
+         <div >
+            <h2 style="font-size: 17px; position: absolute;top:220px;left:900px">Email:{{prof[1]}}</h2>
+            <h2 style="font-size: 17px;position: absolute;top:270px;left:900px">mobile:{{prof[2]}}</h2>
+        </div>
         <!-- <a href="https://imgbb.com/"><img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile" border="0"></a> -->
-        <img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile">
-        <h1>{{name}}</h1>
+        <img src="https://i.ibb.co/hFRg885/IMG-20230507-WA0008.jpg" alt="profile">
+        <h1>{{prof[0]}}</h1>
         <!-- <p>Joined on January 1, 2021</p> -->
         <div class="profile-stats">
             <div class="profile-stat">
                 <h3>Total Owed</h3>
-                <p>{{Owed}}</p>
+                <p>{{prof[4]}}</p>
             </div>
             <div class="profile-stat">
                 <h3>Total Owes</h3>
-                <p>{{Owes}}</p>
+                <p>{{prof[5]}}</p>
             </div>
         </div>
+       
         <div class="friends">
             <h3>Friends</h3>
             {% for i in dic1%}

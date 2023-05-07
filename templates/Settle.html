@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="expense.css">
+</head>
+
+<body>
+    <header>
+        <p class="logo">SPLITWISE...</p>
+        <div class="links">
+            <!-- <span><a href='../../activity.html'>Activity</a></span> -->
+            <span><a href="{{url_for('Friends')}}">Friends</a></span>
+            <span><a href="{{url_for('Groups')}}">Groups</a></span>
+        </div>
+    </header>
+    <div class="header">
+        <h1>SETTLE AN EXPENSE</h1>
+    </div>
+    <div class="info2">
+        <form>
+            <h2>Payment Method</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="user-name" name="user-name" placeholder="Enter username to pay">
+            </div>
+            <div class="form-group">
+                <label for="cash-payment">Cash Payment:</label>
+                <input type="number" id="cash-payment" name="cash-payment" placeholder="Enter amount to be paid">
+            </div>
+
+            <div class="form-group">
+                <label for="gpay">GPay:</label>
+                <a href="https://www.google.com/pay">
+                    <p style="color:blue; text-align: center;">Pay via GPay</p>
+                </a>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <footer>
+        <div class="footer-copy">&#169; Copyrights 2023 || Splitwise</div>
+        <div class="footer-about">Learn more about Splitwise<a href='./home.html'> here.</a></div>
+    </footer>
+</body>

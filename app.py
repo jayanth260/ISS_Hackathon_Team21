@@ -21,6 +21,43 @@ conn.commit()
         
 conn.close()
 
+@app.route('/Groups')
+def Groups():
+    conn=sqlite3.connect('database.db')
+    c=conn.cursor()
+    dic=[]
+    d=c.execute("SELECT Name FROM login_log")
+    for x in d:
+        for s in x:
+            dic.append(s)
+    name=dic[-1]
+    D=[]
+    d=c.execute("SELECT Gname FROM Groups")
+    for i in d:
+        for x in i:
+            D.append(x)
+
+    d=c.execute("SELECT Gname FROM Groups WHERE username=?",(name,))
+    dic1=[]
+    for i in d:
+        for x in i:
+            dic1.append(x)
+    dic2=[]
+    for x in dic1:
+        if x not in dic2:
+            dic2.append(x)
+    print(D)
+    dic3={}
+    for x in dic2:
+        dic3[x]=D.count(x)
+    
+
+
+    print(dic1)
+    l=len(dic2)
+    return render_template('Groups.html',dic3=dic3,l=l)
+
+
 @app.route('/Signup', methods=['POST','GET'])
 def Signup():
     if request.method=='POST':
@@ -137,11 +174,18 @@ def Profile():
     for i in D:
         for x in i:
             dic1.append(x)
-    print(dic1)
+    # print(dic1)
+    prof=[]
+    d=c.execute("SELECT * FROM Profiles WHERE Username=?",(name,))
+    for i in d:
+        prof=i
+    
+        
+
         
 
     
-    return render_template('profile.html',Owed=Owed,Owes=Owes,dic1=dic1,name=name)
+    return render_template('profile.html',dic1=dic1,prof=prof)
 
 @app.route('/Dashboard')
 def Dashboard():
@@ -329,10 +373,10 @@ def add_group():
 
 @app.route('/addexgr', methods=['POST'])
 def addexgr():
-    if request.method=='POST':
+   
     
-        amttol=request.form['amttol']
-        amtU=request.form['amtU']
+        amttol=int(request.form['amttol'])
+        amtU=int(request.form['amtU'])
         group_name = request.form['num-people1']
         num_people = int(request.form['num-people'])
         people = []
@@ -352,22 +396,34 @@ def addexgr():
         people[num_people-1]=name   
         # print(group_name,people,amttol,amtU)
         per=0
-        per=(amttol-amtU)/num_people
-        for i in range(0,num_people):
-            frname=people[i]
-            
-            sql= f"UPDATE Info SET owebyfr = owebyfr + {amttol-amtU} WHERE Username=? AND frname=?"
-            c.execute(sql,(name,frname,))
+        per=(amttol-amtU)/(num_people-1)
+        for i in range(0,num_people-1):
+            fname=people[i]
+            sql= f"UPDATE Groups SET Tbepaid = Tbepaid + ? WHERE Gname=? AND username=?"
+            c.execute(sql,(per,group_name,fname,))
 
-            sql= f"UPDATE Info SET owebyU = owebyU + {amttol-amtU} WHERE Username=? AND frname=?"
-            c.execute(sql,(frname,name,))
+            sql= f"UPDATE Info SET owebyU = owebyU + {per} WHERE Username=? AND frname=?"
+            c.execute(sql,(fname,name,))
+            sql= f"UPDATE Info SET owebyfr = owebyfr + {per} WHERE Username=? AND frname=?"
+            c.execute(sql,(name,fname,))
+
+            sql=f"UPDATE profiles SET Owed=Owed+{per} WHERE Username=?"
+            c.execute(sql,(fname,))
+        sql=f"UPDATE profiles SET Owes=Owes+ {amttol-amtU} WHERE Username=?"
+        c.execute(sql,(name,))
+
+        conn.commit()
+        c.close()
+        conn.close()
+
+        return redirect(url_for('Expense'))
 
 
         
         
         # Do something with the retrieved data here
         
-        return redirect(url_for('Expense'))
+        
 
 @app.route('/addexfr', methods=['POST'])
 def addexfr():
@@ -405,9 +461,9 @@ def login():
 @app.route('/signup')
 def signup():
     return render_template('Signup.html')
-@app.route('/Groups')
-def Groups():
-    return render_template('Groups.html')
+# @app.route('/Groups')
+# def Groups():
+#     return render_template('Groups.html')
 @app.route('/Expense', methods=['POST','GET'])
 def Expense():
     return render_template('expense.html')

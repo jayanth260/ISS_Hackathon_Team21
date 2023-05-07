@@ -18,20 +18,20 @@
         </div>
     </header>
     <div class="frnds">
+        <div class="friend-det">
+            <!-- <img src="https://i.ibb.co/BT6bmFS/group.jpg"> -->
+            <span class="name" style="position: relative;right: 50px;">group name</span>
+          </div>
+        {% for i in dic3 %}
       <div class="friend-det">
-      <img src="group.jpeg">
-      <span class="name">group name</span>
+      <img src="https://i.ibb.co/BT6bmFS/group.jpg">
+      <span class="name">{{i}} <a style="position: relative;left:70px;"> {{dic3[i]}}</a></span>
     </div>
-      <div class="friend-det">
-      <img src="group.jpeg">
-      <span class="name">group name</span>
+    {% endfor %}
+     
+      
     </div>
-      <div class="friend-det">
-      <img src="group.jpeg">
-      <span class="name">group name</span>
-    </div>
-    </div>
-    <p class="total">Total Groups : </p>
+    <p class="total">Total Groups : {{l}}</p>
     <form data-action="/add-group" method="POST">
 
       <h2 style="color:#16213E;">Add a Group</h2>
