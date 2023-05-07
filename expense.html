@@ -20,7 +20,7 @@
     </div>
 
     <div class="info">
-        <form>
+        <form action="http://localhost:5000/addBill" method="POST">
             <div class="form-group">
                 <label for="split-type">Split With</label>
                 <select id="split-type" name="split-type" required>
@@ -60,7 +60,6 @@
             </div>
 
             <div class="button-group">
-                <button onclick="Calculateamount()" type="submit" class="calculate-btn">Calculate</button>
                 <button onclick="CalculateGroupAmount()" type="button" class="save-btn">Save</button>
             </div>
 
