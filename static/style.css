@@ -233,7 +233,6 @@ a{
     height: 250px;
     border-radius: 50%;
 }
-
 .profile h1 {
     margin-top: 20px;
     font-size: 36px;
@@ -265,12 +264,35 @@ a{
 {
     color: #20c997;
 }
+.profile-box
+{
+    background-color: #0c2c54;
+    box-shadow:0 0 30px 5px #0F3460;
+    /* border-color: #17a87c; */
+    border-radius: 10px;
+    /* box-shadow: 0 0 20px 20px #17a87c; */
+}
 .friends
+{
+    margin-top: 4%;
+}
+.friends h3
 {
     font-family: poppins;
     color: antiquewhite;
     font-size: 24px;
     float: left;
+    display: block;
+    /* display:inline-block; */
+}
+.friends p{
+    font-family: poppins;
+    color:antiquewhite;
+    float: left;
+    font-size: 18px;
+    float: left;
+    margin-top:2%;
+    margin-left: 5%;
 }
 .profile-stats {
     display: flex;
@@ -370,6 +392,17 @@ footer a{
     float: left;
     transition: 0.3s;
     object-fit: cover;
+}
+.friends img
+{
+    display:inline;
+    margin-top: 2%;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    float: left;
+    transition: 0.3s;
+    object-fit: cover; 
 }
 /* .friend-det span
 {
