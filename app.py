@@ -348,6 +348,9 @@ def add_group():
     # response_data = {'message': 'Group added successfully'}
     # return jsonify(response_data)
 
+
+
+
 @app.route('/Groups')
 def Groups():
     conn=sqlite3.connect('database.db')
