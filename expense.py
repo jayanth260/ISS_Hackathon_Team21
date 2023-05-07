@@ -22,8 +22,8 @@ def calculate_expense():
     if split_type == 'Friend':
         friend_name = request.form['friend_name']
         owed_amount = request.form['friend-cost-per-person']
-        amount_you_owe_query = "SELECT owebyU FROM Info WHERE name = ?"
-        amount_you_are_owed_query = "SELECT owebyfr FROM Info WHERE name = ?"
+        amount_you_owe_query = "SELECT owebyU FROM Info WHERE username=? AND frname = ?"
+        amount_you_are_owed_query = "SELECT owebyfr FROM Info WHERE username=? AND frname = ?"
         c.execute(amount_you_owe_query, (friend_name,))
         amount_you_owe = c.fetchone()[0]
         c.execute(amount_you_are_owed_query, (friend_name,))
