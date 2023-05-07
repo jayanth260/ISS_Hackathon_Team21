@@ -5,45 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
     <header>
       <p class="logo">SPLITWISE...</p>
       <div class="links">
-        <span><a href='./activity.html'>Activity</a></span>
-            <span><a href="{{url_for('Friends')}}">Friends</a></span>
-            <span><a href="{{url_for('Groups')}}">Groups</a></span>
-            <span><a href="{{url_for('Profile')}}"><img src="profile.png" alt="profile"></a></span>
+        <span><a href="{{url_for('Dashboard')}}">Dashboard</a></span>
+        <span><a href="{{url_for('Friends')}}">Friends</a></span>
+            <span class="current-page" style="color:#16213E;">Groups</span>
+            <span><a href="{{url_for('Profile')}}"><img src="https://i.ibb.co/d5rgsbs/IMG-20230507-WA0009.jpg" > </a></span>
         </div>
     </header>
-    <div class="frnds">
-        <div class="friend-det">
-            <!-- <img src="https://i.ibb.co/BT6bmFS/group.jpg"> -->
-            <span class="name" style="position: relative;right: 50px;">group name</span>
-          </div>
-        {% for i in dic3 %}
-      <div class="friend-det">
-      <img src="https://i.ibb.co/BT6bmFS/group.jpg">
-      <span class="name">{{i}} <a style="position: relative;left:70px;"> {{dic3[i]}}</a></span>
+    <div class="header">
+      <h1>Groups<span class="dot">.</span></h1>
+  </div>
+  <div class="frnds">
+    <div class="friend-det">
+      <!-- <span class="name" style="position: relative;right: 50px;">group name</span> -->
     </div>
-    {% endfor %}
-     
-      
-    </div>
-    <p class="total">Total Groups : {{l}}</p>
-    <form data-action="/add_group" method="POST">
+    {% for i in dic3 %}
+  <div class="friend-det">
+  <img src="https://i.ibb.co/BT6bmFS/group.jpg">
+  <span class="name">{{i}} <a style="position: relative;left:70px;"> {{dic3[i]}}</a></span>
+</div>
+{% endfor %}
+ 
+  
+</div>
+<p class="total">Total Groups : {{l}}</p>
+<form data-action="/add-group" method="POST">
 
-      <h2 style="color:#16213E;">Add a Group</h2>
-      <input type="text" id="num-people2" name="num-people2" placeholder="Enter group name" required>
-      <div><input type="number" id="num-people" name="num-people" placeholder="Enter no of people" required>
-      </div>
-      <br>
-      <div id="people-inputs"></div>
-      <button type="submit" class="sub">Add</button>
-      <a style="position: relative;right:20px;top:30px;color: #16213E;">refresh the page to see updates</a>
-    </form>
-    
-    <script src="/static/script.js"></script>
+  <h2 style="color:#16213E;margin-bottom: 2%">Add a Group</h2>
+  <input type="text" id="num-people2" name="num-people2" placeholder="Enter group name" required>
+  <div><input type="number" id="num-people" name="num-people" placeholder="Enter no of people" required>
+  </div>
+  <br>
+  <div id="people-inputs"></div>
+  <button type="submit" class="sub">Add</button>
+</form>
+
+<script src="/static/script.js"></script>
 </body>
 </html>

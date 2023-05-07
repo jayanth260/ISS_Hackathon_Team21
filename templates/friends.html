@@ -1,68 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
-        <p class="logo">SPLITWISE...</p>
-        <div class="links">
-            <!-- <span><a href='../../activity.html'>Activity</a></span> -->
-            <span><a href="{{ url_for('Friends')}}">Friends</a></span>
-            <span><a href="{{url_for('Groups')}}">Groups</a></span>
-            <span><a href="{{url_for('Profile')}}"><img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile"></a></span>
+      <p class="logo">SPLITWISE...</p>
+      <div class="links">
+        <span><a href="{{url_for('Dashboard')}}">Dashboard</a></span>
+      <span class="current-page" style="color:#16213E;">Friends</span>
+      <span><a href="{{url_for('Groups')}}">Groups</a></span>
+            <span><a href="{{url_for('Profile')}}"><img src="https://i.ibb.co/d5rgsbs/IMG-20230507-WA0009.jpg" > </a></span>
         </div>
-    </header> 
-    <div class="frnds">
-            <div><a style="position: relative;left:700px">Owes</a><a style="position: relative;left:1000px">Owed</a></div>
-        {% for i in dic1%}
-        <div class="friend-det">
-            <img src="https://i.ibb.co/HqRCNz1/profile.png">
-            <span class="name" style="position: relative;top:10px;">{{i}} <a style="position: absolute;left:470px;">{{dic1[i][0]}}</a><a style="position: absolute;left:800px">{{dic1[i][1]}}</a></span>
-            
-            <span class="money2"></span>
-        </div>
-        {% endfor %}
-    
-        <!-- <div class="friend-det">
-            <img src="https://i.ibb.co/HqRCNz1/profile.png">
-            <span class="name">friendname</span>
-            <span class="money1">what we owe</span>
-            <span class="money2">what they owe</span>
-        </div>
-        <div class="friend-det">
-            <img src="https://i.ibb.co/HqRCNz1/profile.png">
-            <span class="name">friendname</span>
-            <span class="money1">what we owe</span>
-            <span class="money2">what they owe</span>
-        </div> -->
+    </header>
+    <div class="header">
+        <h1>Friends<span class="dot">.</span></h1>
     </div>
-    <!-- <div>
-    <span><button type="button"class="add">Add a friend</button></span>
-    </div> -->
-    <p class="total">Total Friends : {{d}}</p>
+    <div class="frnds">
+      <div><a style="position: relative;left:770px;font-size:x-large;font-family: poppins;color: #20c296;">Owes</a><a style="position: relative;left:1050px;font-size:x-large;font-family: poppins;color: #20c296;">Owed</a></div>
+  {% for i in dic1%}
+  <div class="friend-det">
+      <img src="https://i.ibb.co/mzxCVnJ/IMG-20230507-WA0010.jpg">
+      <span class="name" style="position: relative;top:10px;">{{i}} <a style="position: absolute;left:470px;">{{dic1[i][0]}}</a><a style="position: absolute;left:800px">{{dic1[i][1]}}</a></span>
+      
+      <span class="money2"></span>
+  </div>
+  {% endfor %}
+</div>
+<p class="total">Total Friends : {{d}}</p>
 
-    <form method="POST" action="{{ url_for('add_Friends') }}">
-		<h2 style="color:#16213E;">Add a Friend</h2>
-		<input type="TEXT" name="friend-name" id="friend-name" placeholder="Enter user name" required>
-        <br>
-		<button type="submit">Add</button>
-	</form>
-    <form method="POST" action="{{ url_for('remove_Friend') }}">
-		<h2 style="color:#16213E;">Remove a Friend</h2>
-		<input type="TEXT" name="friend-name" id="friend-name" placeholder="Enter user name" required>
-        <br>
-		<button type="submit">Remove</button>
-	</form>
-
-
-    
-    {% with messages = get_flashed_messages(with_categories=true) %}
+<form method="POST" action="{{ url_for('add_Friends') }}">
+<h2 style="color:#16213E;">Add a Friend</h2>
+<input type="TEXT" name="friend-name" id="friend-name" placeholder="Enter user name" required>
+  <br>
+<button type="submit">Add</button>
+</form>
+<form method="POST" action="{{ url_for('remove_Friend') }}">
+<h2 style="color:#16213E;">Remove a Friend</h2>
+<input type="TEXT" name="friend-name" id="friend-name" placeholder="Enter user name" required>
+  <br>
+<button type="submit">Remove</button>
+</form>
+{% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       <ul class="flash" style="position: relative;top: 30px;right:30px;" >
         

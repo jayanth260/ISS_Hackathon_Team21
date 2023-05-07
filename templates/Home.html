@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,40 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="../static/style.css" />
     <title>Home</title>
 </head>
 
-<body>
+<body id="full">
     <header>
-        <div class="links">
-             <span><a href="{{url_for('Profile')}}">Profile</a> </span>
-            <span><a href="#" style="position: relative;">Splitwise</a>  </span>
-            
-            <!-- <span><a href='../../activity.html'>Activity</a></span> -->
-            <span><a href='../../friends.html'>Friends</a></span>
-            <span><a href='../../groups.html'>Groups</a></span>
-           
-        </div>
+        <p class="logo">SPLITWISE...</p>
+            <span class="homeimg"><img src="https://i.ibb.co/fvzXNqM/IMG-20230507-WA0011.png" alt="IMG-20230507-WA0011"></span>
     </header>
     <div>
-        <p class="welcome">welcome to splitwise</p>
+    
+        <p id="welcome">welcome to splitwise</p>
+        <div class="pics">
+        <span class="home"><img src=https://i.ibb.co/CQzBq01/IMG-20230507-WA0005.jpg" ></span>
+        <span class="home"><img src="https://i.ibb.co/30vDk48/IMG-20230507-WA0006.jpg" ></span>
+        <span class="home"><img src="https://i.ibb.co/x7L7Yv8/IMG-20230507-WA0007.jpg"></span>
+        <span class="home"><img src="https://i.ibb.co/d7p4cv3/IMG-20230507-WA0012.jpg" ></span>
+    </div>
         <p class="intro">Splitwise is a free and user-friendly app designed to help people easily split expenses with friends, family,
             or roommates. It simplifies the process of tracking shared expenses and settling up debts, making it easier
             to manage group finances and avoid conflicts. With Splitwise, users can create groups, add expenses, and
             split bills among the members, allowing everyone to keep track of who owes what to whom. The app also offers
             various features such as reminders, comments, and multiple currency support, making it an essential tool for
             anyone who frequently splits bills with others.</p>
-
-
+            <div class="buttons">
+                <a href="{{url_for('login')}}"><span><button type="button" class="login">Log in</button></span></a>
+                <a href="{{url_for('signup')}}"><span><button type="button"class="signup">Sign up</button></span></a>
+        </div>
+        <div class="tts-design"></div>
+        <div class="tts-design2"></div>
     </div>
-  
-
-    <!-- <input type="hidden" name="id" value="1"> -->
-    <a  href="{{url_for('login')}}" style="position: relative;top:10px;">LOG IN</a>
-    <a  href="{{url_for('signup')}}" style="position: relative;top:10px;">Sign UP</a>
-    <!-- </form> -->
-
+    <footer>
+        <div class="footer-copy">&#169; Copyrights 2023 || Splitwise</div>
+        <div class="footer-about">Learn more about Splitwise<a href='./home.html'>here.</a></div>
+     </footer>
+     <script src="/static/expense.js"></script>
 </body>
 
 </html>

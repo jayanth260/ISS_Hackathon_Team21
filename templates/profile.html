@@ -9,16 +9,17 @@
         <p class="logo">SPLITWISE...</p>
         <div class="links">
             <span><a href="{{url_for('Dashboard')}}">Dashboard</a></span>
-            <span><a href='./activity.html'>Activity</a></span>
             <span><a href="{{url_for('Friends')}}">Friends</a></span>
-            <span><a href='./groups.html'>Groups</a></span>
-            <span><a href='./profile.html'><img src="profile.png" alt="profile"></a></span>
+            <span><a href="{{url_for('Groups')}}">Groups</a></span>
+            <span><img src="https://i.ibb.co/d5rgsbs/IMG-20230507-WA0009.jpg" alt="profile"></span>
         </div>
     </header>
-    <div class="profile" style="color:antiquewhite;">
-         <div >
-            <h2 style="font-size: 17px; position: absolute;top:220px;left:900px">Email:{{prof[1]}}</h2>
-            <h2 style="font-size: 17px;position: absolute;top:270px;left:900px">mobile:{{prof[2]}}</h2>
+    <div class="profile" style="color: antiquewhite;">
+        <span class="profiletext">Profile<span class="dot">.</span></span>
+        <a href="{{url_for('Home')}}">Log Out</a>
+        <div >
+            <h2 style="font-size: 17px; position:relative;top:120px;left:250px;font-family: poppins;">Email : {{prof[1]}}</h2>
+            <h2 style="font-size: 17px;position: relative;top:140px;left:250px;font-family: poppins;">mobile : {{prof[2]}}</h2>
         </div>
         <!-- <a href="https://imgbb.com/"><img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile" border="0"></a> -->
         <img src="https://i.ibb.co/hFRg885/IMG-20230507-WA0008.jpg" alt="profile">
@@ -34,7 +35,6 @@
                 <p>{{prof[5]}}</p>
             </div>
         </div>
-       
         <div class="friends">
             <h3>Friends</h3>
             {% for i in dic1%}
