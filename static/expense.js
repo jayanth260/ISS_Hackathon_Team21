@@ -1,3 +1,23 @@
+
+var speed = 100;
+var i = 0;
+var txt = document.getElementById('welcome');
+var text = txt.innerText; 
+txt.innerText = "";
+
+function typeWriter() {
+  if (i < text.length) {
+    if (text[i] === " ") {
+      document.getElementById("welcome").innerHTML +='&nbsp;';
+    } else {
+      document.getElementById("welcome").innerText += text[i];
+    }
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+typeWriter();
+
 const form = document.querySelector('form');
 const numPeopleInput = document.querySelector('#num-people');
 const peopleInputsDiv = document.querySelector('#people-inputs');
