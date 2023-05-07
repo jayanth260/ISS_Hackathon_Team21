@@ -17,45 +17,22 @@ sql1 = f"CREATE TABLE IF NOT EXISTS Info ( Username TEXT,frname TEXT,owebyU INTE
 c.execute(sql1)
 sql1=f"CREATE TABLE IF NOT EXISTS Groups(Gname TEXT,username TEXT, Tbepaid INTEGER )"
 c.execute(sql1)
+c.execute('''CREATE TABLE IF NOT EXISTS profiles
+             (Username TEXT, 
+             Email TEXT,
+             Phone TEXT,
+             Password TEXT,
+             Owed INTEGER,
+             Owes INTEGER)''')
+c.execute('''CREATE TABLE IF NOT EXISTS login_log
+        (Name TEXT,
+        Password TEXT)''')
+
 conn.commit()
         
 conn.close()
 
-@app.route('/Groups')
-def Groups():
-    conn=sqlite3.connect('database.db')
-    c=conn.cursor()
-    dic=[]
-    d=c.execute("SELECT Name FROM login_log")
-    for x in d:
-        for s in x:
-            dic.append(s)
-    name=dic[-1]
-    D=[]
-    d=c.execute("SELECT Gname FROM Groups")
-    for i in d:
-        for x in i:
-            D.append(x)
 
-    d=c.execute("SELECT Gname FROM Groups WHERE username=?",(name,))
-    dic1=[]
-    for i in d:
-        for x in i:
-            dic1.append(x)
-    dic2=[]
-    for x in dic1:
-        if x not in dic2:
-            dic2.append(x)
-    print(D)
-    dic3={}
-    for x in dic2:
-        dic3[x]=D.count(x)
-    
-
-
-    print(dic1)
-    l=len(dic2)
-    return render_template('Groups.html',dic3=dic3,l=l)
 
 
 @app.route('/Signup', methods=['POST','GET'])
@@ -80,9 +57,9 @@ def Signup():
         for x in d:
             for i in x:
                 if username==i:
-                    # flash('username exits!Try different')
-                    # messages = get_flashed_messages()
-                    return render_template('Signup.html')
+                    flash('username exits!Try different')
+                    messages = get_flashed_messages()
+                    return render_template('Signup.html', messages=messages)
         sql = "INSERT INTO profiles VALUES ('%s', '%s','%s','%s',%d,%d)" % (username, email,phone,password,0,0)
         c.execute(sql)
         c.execute('''CREATE TABLE IF NOT EXISTS login_log
@@ -127,21 +104,23 @@ def Login():
         # Append the user data to the file
         # user = {'name': name, 'email': email, 'password': password}
         y=0
-        d=c.execute('SELECT Password FROM profiles WHERE Username=? ', (name,))
+        d=c.execute('''SELECT Password FROM login_log WHERE Name=? ''', (name,))
         for i in d:
-            for x in i:
-                y=x
-        
-        if y!=password or y==0:
+                for x in i:
+                    y=x
+    
+        print(y,password
+              )
+        if y!=password  or y==0:
             conn.commit()
             c.close()
             conn.close()
 
             
             
-            # flash('Login Unsuccesful! Try again')
-            # messages = get_flashed_messages()
-            return render_template('Login.html')
+            flash('Login Unsuccesful! Try again')
+            messages = get_flashed_messages()
+            return render_template('Login.html',messages=messages)
 
         else :
             sql = "INSERT INTO login_log (name, password) VALUES ('%s', '%s')" % (name, password)
@@ -365,11 +344,45 @@ def add_group():
     
     # Add group and people to database
     # ...
+    return redirect(url_for('add_group'))
+    # response_data = {'message': 'Group added successfully'}
+    # return jsonify(response_data)
+
+@app.route('/Groups')
+def Groups():
+    conn=sqlite3.connect('database.db')
+    c=conn.cursor()
+    dic=[]
+    d=c.execute("SELECT Name FROM login_log")
+    for x in d:
+        for s in x:
+            dic.append(s)
+    name=dic[-1]
+    D=[]
+    d=c.execute("SELECT Gname FROM Groups")
+    for i in d:
+        for x in i:
+            D.append(x)
+
+    d=c.execute("SELECT Gname FROM Groups WHERE username=?",(name,))
+    dic1=[]
+    for i in d:
+        for x in i:
+            dic1.append(x)
+    dic2=[]
+    for x in dic1:
+        if x not in dic2:
+            dic2.append(x)
+    print(D)
+    dic3={}
+    for x in dic2:
+        dic3[x]=D.count(x)
     
-    response_data = {'message': 'Group added successfully'}
-    return jsonify(response_data)
 
 
+    print(dic1)
+    l=len(dic2)
+    return render_template('Groups.html',dic3=dic3,l=l)
 
 @app.route('/addexgr', methods=['POST'])
 def addexgr():
@@ -380,9 +393,14 @@ def addexgr():
         group_name = request.form['num-people1']
         num_people = int(request.form['num-people'])
         people = []
+        
         for i in range(1, num_people+1):
             person_name = request.form.get(f'person{i}')
             people.append(person_name)
+        
+            
+
+        
         conn=sqlite3.connect('database.db')
         c=conn.cursor()
         dic=[]
@@ -397,11 +415,8 @@ def addexgr():
         # print(group_name,people,amttol,amtU)
         per=0
         per=(amttol-amtU)/(num_people-1)
-        for i in range(0,num_people-1):
-            fname=people[i]
-            sql= f"UPDATE Groups SET Tbepaid = Tbepaid + ? WHERE Gname=? AND username=?"
-            c.execute(sql,(per,group_name,fname,))
-
+        if group_name=="NULL" and num_people==2:
+            fname=people[0]
             sql= f"UPDATE Info SET owebyU = owebyU + {per} WHERE Username=? AND frname=?"
             c.execute(sql,(fname,name,))
             sql= f"UPDATE Info SET owebyfr = owebyfr + {per} WHERE Username=? AND frname=?"
@@ -409,14 +424,34 @@ def addexgr():
 
             sql=f"UPDATE profiles SET Owed=Owed+{per} WHERE Username=?"
             c.execute(sql,(fname,))
-        sql=f"UPDATE profiles SET Owes=Owes+ {amttol-amtU} WHERE Username=?"
-        c.execute(sql,(name,))
+            conn.commit()
+            c.close()
+            conn.close()
 
-        conn.commit()
-        c.close()
-        conn.close()
+            return redirect(url_for('Expense'))
 
-        return redirect(url_for('Expense'))
+
+        else:
+            for i in range(0,num_people-1):
+                fname=people[i]
+                sql= f"UPDATE Groups SET Tbepaid = Tbepaid + ? WHERE Gname=? AND username=?"
+                c.execute(sql,(per,group_name,fname,))
+
+                sql= f"UPDATE Info SET owebyU = owebyU + {per} WHERE Username=? AND frname=?"
+                c.execute(sql,(fname,name,))
+                sql= f"UPDATE Info SET owebyfr = owebyfr + {per} WHERE Username=? AND frname=?"
+                c.execute(sql,(name,fname,))
+
+                sql=f"UPDATE profiles SET Owed=Owed+{per} WHERE Username=?"
+                c.execute(sql,(fname,))
+            sql=f"UPDATE profiles SET Owes=Owes+ {amttol-amtU} WHERE Username=?"
+            c.execute(sql,(name,))
+
+            conn.commit()
+            c.close()
+            conn.close()
+
+            return redirect(url_for('Expense'))
 
 
         
@@ -455,6 +490,32 @@ def addexfr():
     
     return redirect(url_for('Expense'))
 
+@app.route('/Settleamt', methods=['POST','GET'])
+def Settleamt():
+    frname=request.form['user-name']
+    amt=int(request.form['cash-payment'])
+    conn=sqlite3.connect('database.db')
+    c=conn.cursor()
+    dic=[]
+    d=c.execute("SELECT Name FROM login_log")
+    for x in d:
+        for s in x:
+            dic.append(s)
+    name=dic[-1]
+
+    c.execute(f"UPDATE profiles SET Owed=Owed - ? WHERE Username=?",(amt,name,))
+    c.execute(f"UPDATE profiles SET Owes=Owes - ? WHERE Username=?",(amt,frname,))
+    c.execute(f"UPDATE Info SET owebyU=owebyU - ? WHERE Username=? AND frname=? ",(amt,name,frname,))
+    c.execute(f"UPDATE Info SET owebyfr=owebyfr - ? WHERE Username=? AND frname=? ",(amt,frname,name,))
+    conn.commit()
+    c.close()
+    conn.close()
+
+    return render_template('Settle.html')   
+
+
+
+
 @app.route('/login')
 def login():
     return render_template('Login.html')
@@ -467,6 +528,9 @@ def signup():
 @app.route('/Expense', methods=['POST','GET'])
 def Expense():
     return render_template('expense.html')
+@app.route('/Settle')
+def Settle():
+    return render_template('Settle.html')
 
 
 
