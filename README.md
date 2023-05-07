@@ -11,6 +11,7 @@ The website created is a web-based clone of the application **Splitwise**.
 ### Frameworks and Packages
 1. Flask
 2. SQLite3
+3. Google Fonts
 
 ### Instructions To Run The Application
 All the files connected to the web application have to be placed in a single folder. The Login/Sign-Up page should be opened in the browser first - other pages are navigated to after logging in/signing up. The python files (with extension .py) have to be run on a suitable platform (a text editor like VSCode) before viewing the webpages on the browser. (It is to be noted that the image files used have to be present in the folder)
