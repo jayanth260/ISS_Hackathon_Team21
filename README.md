@@ -6,6 +6,7 @@ The website created is a web-based clone of the application **Splitwise**.
 2. The **Dashboard** features two options : **Add an Expense** and **Settle an Expense** which like their namesake are for adding a new expense and settling an old expense with friends respectively.
 3. The **Friends** page lists all the friends the user has transactions along with a feature to add more friends and remove existing friends.
 4. The **Groups** page lists all the groups the user is a part of - formed from the user's friend list. 
+5. The **Profile** page 
 
 ### Frameworks and Packages
 1. Flask
@@ -18,4 +19,4 @@ All the files connected to the web application have to be placed in a single fol
 1. Jayanth - profile.html, app.py, database.db, script.js, style.css, Login.html, Signup.html 
 2. Deekshitha - home.html, friends.html, Groups.html, groups.js 
 3. Gadha - dashboard.html, expense.html, expense.css, expense.js, expense.py, settle.html, settle.py
-4. CSS files for dashboard, friends, groups, home, profile were combined into one - dashboard.css
+4. CSS files for dashboard, friends, groups, home, profile were combined into one file - dashboard.css
