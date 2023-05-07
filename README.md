@@ -14,6 +14,6 @@ The website created is a web-based clone of the application **Splitwise**.
 ### Instructions To Run The Application
 
 ### Contribution
-1. Jayanth - profile.html, profile.css, 
-2. Deekshitha - home.html, home.css, friends.html, groups.html, groups.js 
+1. Jayanth - profile.html, profile.css, app.py, database.db, script.js, style.css, Login.html, Signup.html 
+2. Deekshitha - home.html, home.css, friends.html, Groups.html, groups.js 
 3. Gadha - dashboard.html, expense.html, expense.css, expense.js, expense.py, settle.html, settle.py
