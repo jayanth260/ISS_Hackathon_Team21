@@ -14,12 +14,9 @@
     <p class="logo">SPLITWISE...</p>
         <span class="homeimg"><img  href="{{url_for('Home')}}"src="https://i.ibb.co/fvzXNqM/IMG-20230507-WA0011.png" alt="IMG-20230507-WA0011"></span>
 </header>
-            <div class="container2" style="color: antiquewhite;display: grid;
-            align-items: top;
-            grid-template-columns: 0.5fr 1fr;
-            column-gap: px;">
-                <img src="https://play-lh.googleusercontent.com/xextMuNptM547SMenMUaywqIWmvqekf-9urJfXF2N45r-lYH0an-bjgFO9IYzqgSkOTU" style="border-radius: 50%;width: 300px;height: 300px;position: relative;top:100px;left:400px">
-                <div class="container3" style="position: relative;top:180px">
+            <div class="container2" style="color: black;">
+                <img src="https://play-lh.googleusercontent.com/xextMuNptM547SMenMUaywqIWmvqekf-9urJfXF2N45r-lYH0an-bjgFO9IYzqgSkOTU" style="border-radius: 50%;width: 300px;height: 300px;position: relative;top:200px;left:250px">
+                <div class="container3" style="position: relative;top:220px;right:200px">
             <form method="post" action="{{ url_for('Login') }}">
                 <label>Username/Email</label><br>
                 <input type="text" name="name"><br>
@@ -32,10 +29,10 @@
              
               {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
-    <ul class="flash" style="position: relative;top: 30px;right:30px;" >
+    <ul class="flash" style="position: relative;left:250px;color: aliceblue;" >
       
         <li>{{ messages[-1][1] }}</li>
-        <li>new to splitwise?<a href="{{url_for('signup')}}">Signup</a></li>
+        <li>new to splitwise?<a href="{{url_for('signup')}}" style="color: cadetblue;">Signup</a></li>
          </ul>
     <!-- <button id="dismiss">Dismiss</button>
     <script>
