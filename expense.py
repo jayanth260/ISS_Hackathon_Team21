@@ -6,12 +6,11 @@ app=Flask(__name__)
 conn = sqlite3.connect('database.db')
 c = conn.cursor()
 
+
 @app.route('/addBill', methods=['GET','POST'])
 def calculate_expense():
     split_type = request.form['split-type']
-   # tot_amount = float(request.form['amount'])
-   # user_amount = float(request.form['amount_u'])
-    
+   
     dic=[]
     d=c.execute("SELECT Name FROM login_log")
     for x in d:
@@ -37,8 +36,29 @@ def calculate_expense():
             c.execute("UPDATE Info SET owebyfr = ? WHERE username=? AND frname = ?", (amount_you_are_owed, user_name, friend_name))
             c.execute("UPDATE Info SET owebyU = ? WHERE username=? AND frname = ?", (amount_you_are_owed, friend_name, user_name))
 
-        conn.commit()
-        conn.close()
+
+
+    elif split_type=="Group":
+        group_name = request.form['group_name']
+        c.execute("SELECT username FROM Groups WHERE Gname=?", (group_name,))
+        friend_names = [row[0] for row in c.fetchall()]
+
+# Add labels for each friend to the form
+        for friend_name in friend_names:
+            friend_label = f"<label for='{friend_name}'>{friend_name} Paid</label>"
+            friend_input = f"<input type='number' id='{friend_name}' name='{friend_name}'>"
+            friend_fields = f"<div class='form-group-split-fields split-friend'>{friend_label}{friend_input}</div>"
+    # Append the friend fields to the form
+        form_element = driver.find_element_by_tag_name('form')
+        form_element.insert_child(-2, friend_fields)
+
+
+    
+
+
+
+    conn.commit()
+    conn.close()
 
 if __name__ == '__main__':
     app.run(debug=True)
