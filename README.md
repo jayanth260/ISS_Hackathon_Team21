@@ -7,13 +7,13 @@ The website created is a web-based clone of the application **Splitwise**.
 3. The **FRIENDS** page lists all the friends the user has transactions along with a feature to add more friends and remove existing friends.
 4. The **GROUPS** page lists all the groups the user is a part of - formed from the user's friend list. 
 
-###Frameworks and Packages
+### Frameworks and Packages
 1. Flask
 2. SQLite3
 
-###Instructions To Run The Application
+### Instructions To Run The Application
 
-###Contribution
+### Contribution
 1. Jayanth - profile.html, profile.css, 
 2. Deekshitha - home.html, home.css, friends.html, groups.html, groups.js 
 3. Gadha - dashboard.html, expense.html, expense.css, expense.js, expense.py, settle.html, settle.py
