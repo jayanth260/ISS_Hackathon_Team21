@@ -478,8 +478,7 @@ a{
 {
     display: block;
     height: 60px;
-    /* background-image: linear-gradient(to right,#16213E,#20c997); */
-    /* border-color: aquamarine; */
+  
     margin-left:10%;
     border-radius:10px;
     position: relative;
@@ -488,7 +487,7 @@ a{
     transition: 0.3s;
     margin-bottom: 0.5%;
     margin-right: 10%;
-    /* background: #16213E; */
+
 }
 
 .friend-det:hover  img{
@@ -499,8 +498,7 @@ a{
     font-size: 220%;
 }
 .friend-det img{
-    /* padding-top: 1%; */
-    /* padding-left: 1%; */
+    
     display:inline;
     border-radius: 20px 0 0 20px;
     width: 50px;
@@ -509,16 +507,7 @@ a{
     transition: 0.3s;
     object-fit: cover;
 }
-/* .friend-det span
-{
-    color:antiquewhite;
-    font-size:20px;
-    margin-left: 5%;
-    font-family: poppins;
-    /* text-align: center; */
-    /* margin-top: 2%; 
-    padding-top: 5%;
-} */
+
 .name
 {
     color:antiquewhite;
@@ -545,7 +534,7 @@ a{
 .frnds
 {
     padding-top:2%;
-    /* margin-top:5%; */
+
     padding-bottom: 1%;
     z-index: 2;
 }
@@ -594,7 +583,7 @@ form {
 }
 
 label {
-    /* display: block; */
+   
     margin-bottom: 10px;
     font-family: poppins;
 
@@ -611,3 +600,4 @@ label {
     margin-left: 10%;
     font-family: poppins;
 }
+

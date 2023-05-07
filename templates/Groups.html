@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+      <p class="logo">SPLITWISE...</p>
+      <div class="links">
+        <span><a href='./activity.html'>Activity</a></span>
+            <span><a href="{{url_for('Friends')}}">Friends</a></span>
+            <span><a href="{{url_for('Groups')}}">Groups</a></span>
+            <span><a href="{{url_for('Profile')}}"><img src="profile.png" alt="profile"></a></span>
+        </div>
+    </header>
+    <div class="frnds">
+      <div class="friend-det">
+      <img src="group.jpeg">
+      <span class="name">group name</span>
+    </div>
+      <div class="friend-det">
+      <img src="group.jpeg">
+      <span class="name">group name</span>
+    </div>
+      <div class="friend-det">
+      <img src="group.jpeg">
+      <span class="name">group name</span>
+    </div>
+    </div>
+    <p class="total">Total Groups : </p>
+    <form data-action="/add-group" method="POST">
+
+      <h2 style="color:#16213E;">Add a Group</h2>
+      <input type="text" id="num-people2" name="num-people2" placeholder="Enter group name" required>
+      <div><input type="number" id="num-people" name="num-people" placeholder="Enter no of people" required>
+      </div>
+      <br>
+      <div id="people-inputs"></div>
+      <button type="submit" class="sub">Add</button>
+    </form>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@
         <div class="links">
             <span><a href="{{url_for('Dashboard')}}">Dashboard</a></span>
             <span><a href='./activity.html'>Activity</a></span>
-            <span><a href='./friends.html'>Friends</a></span>
+            <span><a href="{{url_for('Friends')}}">Friends</a></span>
             <span><a href='./groups.html'>Groups</a></span>
             <span><a href='./profile.html'><img src="profile.png" alt="profile"></a></span>
         </div>
@@ -18,7 +18,7 @@
     <div class="profile">
         <!-- <a href="https://imgbb.com/"><img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile" border="0"></a> -->
         <img src="https://i.ibb.co/HqRCNz1/profile.png" alt="profile">
-        <h1>Username</h1>
+        <h1>{{name}}</h1>
         <!-- <p>Joined on January 1, 2021</p> -->
         <div class="profile-stats">
             <div class="profile-stat">
